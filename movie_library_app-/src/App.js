@@ -1,6 +1,6 @@
 
 import './App.css';
-import moviesList from './components/MoviesList/movieslist.js';
+import MoviesList from './components/MoviesList/movieslist.js';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
         <hr/>
 
         
-          <moviesList />
+          <MoviesList />
         </div>
       
     </div>
