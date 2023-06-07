@@ -1,6 +1,6 @@
 import "./movieslist.css";
 
-const moviesList = () => {
+const MoviesList = () => {
   const subHeading = "My most popular movies";
 
   const movies = [
@@ -42,4 +42,4 @@ const moviesList = () => {
   )
 };
 
-export default moviesList;
+export default MoviesList;
