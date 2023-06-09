@@ -1,8 +1,8 @@
 
 import './App.css';
 import MoviesList from './components/MoviesList/movieslist.js';
-import Todos from './components/Todos/todos';
 import Academies from './components/Academies/academies.jsx';
+import Counter from './components/Counter/counter.jsx'
 
 
 function App() {
@@ -34,11 +34,13 @@ function App() {
         
           <MoviesList />
 
-          <Todos fullname = 'Tode Temov' message = 'This todos are for' color = 'red' />
-
           <hr/>
 
           <Academies academies = {academiesArray} name = {name}/>
+
+          <hr/>
+
+          <Counter />
         </div>
       
     </div>
