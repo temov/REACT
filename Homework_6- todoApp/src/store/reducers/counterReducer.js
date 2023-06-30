@@ -7,17 +7,23 @@ const initialState ={
 export const counterReducer = (state = initialState,action)=>{
 
     switch (action.type) {
-        case "TOTAL_COUNT":
+        case "TOTAL_COUNT_ADD":
             
             return {
                 ...state,
                 totalCount:state.totalCount+1
             }
-        case "CHECKED_COUNT":
+        case "TOTAL_COUNT_DELETE":
             
             return {
                 ...state,
-                checkedCountCount:state.checkedCount+1
+                totalCount:state.totalCount-1
+            }
+        case "TOGGLE_COUNT":
+            
+            return {
+                ...state,
+                checkedCount:state.checkedCount+1
             }
     
         default:

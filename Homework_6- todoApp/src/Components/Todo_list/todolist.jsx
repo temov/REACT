@@ -1,8 +1,9 @@
-import { todoCart } from "../Todo_cart/todoCart"
+import { useSelector } from "react-redux";
 
-export const TodoList = (props)=>{
+export const TodoList = ()=>{
 
-    const{todos} = props;
+    const todos = useSelector((state) => state.todoReducer.todos);
+
 
     return(
         <div>
