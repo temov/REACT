@@ -6,20 +6,22 @@ export const People = ()=>{
     
 
     const[people,setPeople] = useState([]);
-    const [page, setPage] = useState(1);
-    const [errorMessage, setErrorMessage] = useState("");
-    const URL = `https://swapi.dev/api/people/?page=${page}`;
+    const [nextPage, setNextPage] = useState('');
+    const [previousPage, setPreviousPage] = useState('');
 
-    const fetchPeople = async ()=>{
+    const fetchPeople = async (url)=>{
+
+     
 
         try {
-            const response = await fetch(URL);
+            const response = await fetch(url || 'https://swapi.dev/api/people/');
             const result = await response.json()
             console.log("RESULT:", result);
             setPeople(result.results);
+            setNextPage(result.next);
+            setPreviousPage(result.previous);
             
         } catch (error) {
-            setErrorMessage(error.message);
             throw new Error(error);
         }
     };
@@ -27,18 +29,19 @@ export const People = ()=>{
        
         if (people.length > 0) return;
         fetchPeople();
-      }, [page]);
+      }, []);
 
       const handleNextPage = () => {
-        setPage(page + 1);
+        if (nextPage) {
+          fetchPeople(nextPage);
+        }
       };
     
       const handlePreviousPage = () => {
-        if (page > 1) {
-          setPage(page - 1);
+        if (previousPage) {
+          fetchPeople(previousPage);
         }
       };
-
     return (
 
         <div>

@@ -17,16 +17,22 @@ export const SingleCharacter = ()=>{
         const response = await fetch(`https://swapi.dev/api/people/${id}`);
         const result = await response.json();
         console.log("Result of single character", result);
+       
         setsingleCharacter(result);
+       
       };
 
-      const fetchCharacterHomeworld = async()=>{
+     const fetchCharacterHomeworld = async () =>{
 
-        const response = await fetch(`https://swapi.dev/api/planets/${id}`);
-        const result = await response.json();
-        console.log("Result of a homeworld", result);
-        setHomeworld(result);
-      }
+    const response = await fetch(`https://swapi.dev/api/people/${id}`);
+    const result = await response.json();
+    const homeworldResponse = result.homeworld;
+    const fetchHomeworld = await fetch(homeworldResponse);
+    const resultHomeworld = await fetchHomeworld.json()
+    console.log("Result of a homeworld", result.homeworld);
+    setHomeworld(resultHomeworld);
+        
+    };
     
       useEffect(() => {
         fetchSingleCharacter();
