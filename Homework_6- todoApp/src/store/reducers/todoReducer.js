@@ -19,12 +19,27 @@ export const todoReducer = (state = initialState,action)=>{
                 todos: [...state.todos, action.payload],
                 todoName: "",
             };
+
+
         case "DELETE_TODO":
+
+        const filteredTodos = state.todos.filter((todo) => todo.id !== action.payload.id)
             return {
                 ...state,
-                todos: [...state.todos, action.payload],
-    
-            };
+                todos: [filteredTodos],
+              };
+
+        case "TOGGLE_TODO":
+
+            const completedTodos = state.todos.map((todo) =>
+            todo.id === action.payload.id
+              ? { ...todo, completed: !todo.completed }
+              : todo )
+            return {
+                ...state,
+                todos:[completedTodos] 
+               
+              };
     
         default:
             return state;

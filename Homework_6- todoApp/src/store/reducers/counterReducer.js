@@ -14,11 +14,14 @@ export const counterReducer = (state = initialState,action)=>{
                 totalCount:state.totalCount+1
             }
         case "TOTAL_COUNT_DELETE":
+
+            if(state.totalCount >0){
             
             return {
                 ...state,
                 totalCount:state.totalCount-1
             }
+        }
         case "TOGGLE_COUNT":
             
             return {

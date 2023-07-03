@@ -1,5 +1,4 @@
 import { Counter } from "./Components/Counter/counter"
-import { Actions } from "./Components/Todo_actions/todoActions"
 import { TodoList } from "./Components/Todo_list/todolist"
 import { Provider } from "react-redux";
 import store from "./store";
@@ -14,7 +13,6 @@ function App() {
           <Counter/>
           <hr/>
           <TodoList/>
-          <Actions />
     </Provider>
     </>
   )
