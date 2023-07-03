@@ -29,23 +29,23 @@ export const TodoList = ()=>{
         console.log(todos);
     }
 
-    const handleDeleteTodo = ()=>{
+    const handleDeleteTodo = (todoid)=>{
 
 
-        dispatch({ type: "DELETE_TODO", payload: todos});
-        dispatch({type:"TOTAL_COUNT_DELETE", payload:totalCount})
+        dispatch({ type: "DELETE_TODO", payload: todoid});
+        // dispatch({type:"TOTAL_COUNT_DELETE", payload:totalCount})
 
     }
 
-    const handleToggleTodo = ()=>{
+    const handleToggleTodo = (todoid)=>{
 
 
-    dispatch({ type: "TOGGLE_TODO", payload: todos});
+    dispatch({ type: "TOGGLE_TODO", payload: todoid});
     dispatch({type:"TOGGLE_COUNT", payload:checkedCount})
 
 }
 
-
+console.log(todos)
     return(
         <div>
 
@@ -69,9 +69,9 @@ export const TodoList = ()=>{
                                     <input
                                         type="checkbox"
                                         checked={todo.completed}
-                                        onChange={handleToggleTodo}
+                                        onChange={() => handleToggleTodo(todo.id)}
                                     />
-                                    <button onClick={handleDeleteTodo}>X</button>
+                                    <button onClick={() => handleDeleteTodo(todo.id)}>X</button>
                                 </div>
                             ))}
                     </div>
