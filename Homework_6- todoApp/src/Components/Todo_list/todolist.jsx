@@ -33,7 +33,7 @@ export const TodoList = ()=>{
 
 
         dispatch({ type: "DELETE_TODO", payload: todoid});
-        // dispatch({type:"TOTAL_COUNT_DELETE", payload:totalCount})
+        dispatch({type:"TOTAL_COUNT_DELETE", payload:totalCount})
 
     }
 
@@ -42,6 +42,7 @@ export const TodoList = ()=>{
 
     dispatch({ type: "TOGGLE_TODO", payload: todoid});
     dispatch({type:"TOGGLE_COUNT", payload:checkedCount})
+        
 
 }
 

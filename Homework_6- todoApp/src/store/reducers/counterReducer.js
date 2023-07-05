@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux"
+
 const initialState ={
 
     totalCount:0,
@@ -5,6 +7,8 @@ const initialState ={
 }
 
 export const counterReducer = (state = initialState,action)=>{
+
+  
 
     switch (action.type) {
         case "TOTAL_COUNT_ADD":
@@ -23,11 +27,14 @@ export const counterReducer = (state = initialState,action)=>{
             }
         }
         case "TOGGLE_COUNT":
+
             
             return {
                 ...state,
                 checkedCount:state.checkedCount+1
             }
+
+        
     
         default:
             return state;

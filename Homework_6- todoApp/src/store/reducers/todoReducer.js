@@ -42,6 +42,8 @@ export const todoReducer = (state = initialState,action)=>{
                 todos:completedTodos
                
               };
+
+       
     
         default:
             return state;
