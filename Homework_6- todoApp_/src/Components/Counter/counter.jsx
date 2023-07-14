@@ -2,12 +2,13 @@ import { useSelector } from "react-redux";
 
 export const Counter = ()=>{
 
-const countTotal = useSelector((state) => state.counterReducer.totalCount);
-  const checkedCount = useSelector((state) => state.counterReducer.checkedCount);
+const todos = useSelector((state) => state.todos)
+const todosTotal = todos.length;
+const todosCompleted = todos.filter((todo) => todo.completed).length;
 
 return(
     <div>
-        <h1>Counter: Total_todos:{countTotal}, checked_todos:{checkedCount}</h1>
+        <h1>Counter: Total_todos:{todosTotal}, checked_todos:{todosCompleted}</h1>
     </div>
    
         

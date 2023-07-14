@@ -5,10 +5,9 @@ export const TodoList = ()=>{
     
 
     const dispatch = useDispatch();
-    const todoName = useSelector((state)=>state.todoReducer.todoName)
-    const todos = useSelector((state)=>state.todoReducer.todos)
-    const totalCount = useSelector((state)=>state.counterReducer.totalCount)
-    const checkedCount = useSelector((state)=>state.counterReducer.checkedCount)
+    const todoName = useSelector((state)=>state.todoName)
+    const todos = useSelector((state)=>state.todos)
+    
 
     const handleChangeTodoName = (event)=>{
 
@@ -24,16 +23,14 @@ export const TodoList = ()=>{
         }
 
         dispatch({type:"ADD_TODO", payload:todo})
-        dispatch({type:"TOTAL_COUNT_ADD", payload:totalCount})
 
-        console.log(todos);
     }
 
     const handleDeleteTodo = (todoid)=>{
 
 
         dispatch({ type: "DELETE_TODO", payload: todoid});
-        dispatch({type:"TOTAL_COUNT_DELETE", payload:totalCount})
+
 
     }
 
@@ -41,7 +38,7 @@ export const TodoList = ()=>{
 
 
     dispatch({ type: "TOGGLE_TODO", payload: todoid});
-    dispatch({type:"TOGGLE_COUNT", payload:checkedCount})
+
         
 
 }
