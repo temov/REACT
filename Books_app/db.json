@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "title": "Harry Poter",
+      "id": 2
+    },
+    {
+      "title": "DaVinci Code",
+      "id": 3
+    },
+    {
+      "title": "Star Wars 2",
+      "id": 4
+    },
+    {
+      "title": "My Story",
+      "id": 5
+    },
+    {
+      "title": "Deep blue",
+      "id": 6
+    },
+    {
+      "title": "Wild call",
+      "id": 7
+    },
+    {
+      "title": "Nature calls",
+      "id": 9
+    }
+  ]
+}

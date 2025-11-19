@@ -1,0 +1,25 @@
+.navigation {
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .navigation h3{
+   color: burlywood;
+   font-size:1.4rem;
+    
+  }
+  .navlinks {
+    list-style: none;
+    display: flex;
+    width: 40%;
+    padding: 10px;
+    justify-content: space-around;
+    color: rgb(117, 77, 25);
+  }
+  
+  .navlinks > li {
+    cursor: pointer;
+  }
